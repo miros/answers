@@ -8,6 +8,13 @@
     <%= yield(:head) %>
   </head>
   <body>
+      <div id="userMenu">
+        <% if user_signed_in? %>
+            [<%= link_to "Выйти", destroy_user_session_path %>]
+        <% else %>
+            [<%= link_to "Войти", new_user_session_path %>]
+          <% end %>
+    </div>
     <div id="container">
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
