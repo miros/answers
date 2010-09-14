@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="RUBY_MODULE" version="4">
+  <component name="DBNavigator.Module.ConnectionManager">
+    <connections />
+  </component>
+  <component name="FacetManager">
+    <facet type="RailsFacetType" name="Ruby on Rails">
+      <configuration>
+        <RAILS_FACET_CONFIG_ID NAME="RAILS_FACET_SUPPORT_REMOVED" VALUE="false" />
+        <RAILS_FACET_CONFIG_ID NAME="RAILS_TESTS_SOURCES_PATCHED" VALUE="true" />
+        <RAILS_FACET_CONFIG_ID NAME="RAILS_FACET_APPLICATION_ROOT" VALUE="$MODULE_DIR$" />
+      </configuration>
+    </facet>
+  </component>
+  <component name="GemRequirementsHolder" version="2">
+    <requirement>
+      <requirement>
+        <dependency name="devise" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source from="Gemfile" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="flutie" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source from="Gemfile" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="nifty-generators" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source from="Gemfile" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="pg" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source from="Gemfile" />
+      <source from="config/database.yml" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="rails" version="3.0.0" bound="EQUAL" git="false" />
+      </requirement>
+      <source from="Gemfile" />
+    </requirement>
+  </component>
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/tmp" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rails (v3.0.0, /usr/lib/ruby/gems/1.8/gems/rails-3.0.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] bundler (v1.0.0, /usr/lib/ruby/gems/1.8/gems/bundler-1.0.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] railties (v3.0.0, /usr/lib/ruby/gems/1.8/gems/railties-3.0.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] activerecord (v3.0.0, /usr/lib/ruby/gems/1.8/gems/activerecord-3.0.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] actionpack (v3.0.0, /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] activeresource (v3.0.0, /usr/lib/ruby/gems/1.8/gems/activeresource-3.0.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] actionmailer (v3.0.0, /usr/lib/ruby/gems/1.8/gems/actionmailer-3.0.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] activesupport (v3.0.0, /usr/lib/ruby/gems/1.8/gems/activesupport-3.0.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] pg (v0.9.0, /usr/lib/ruby/gems/1.8/gems/pg-0.9.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] devise (v1.1.2, /usr/lib/ruby/gems/1.8/gems/devise-1.1.2)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] bcrypt-ruby (v2.1.2, /usr/lib/ruby/gems/1.8/gems/bcrypt-ruby-2.1.2)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] warden (v0.10.7, /usr/lib/ruby/gems/1.8/gems/warden-0.10.7)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] flutie (v1.0.4, /usr/lib/ruby/gems/1.8/gems/flutie-1.0.4)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] nifty-generators (v0.4.0, /usr/lib/ruby/gems/1.8/gems/nifty-generators-0.4.0)" level="application" />
+  </component>
+</module>
+
