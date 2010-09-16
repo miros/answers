@@ -3,25 +3,28 @@ class CreatePosts < ActiveRecord::Migration
     create_table :posts, :force => true do |t|
       t.string :type
 
-      t.integer :user_id
-      t.integer :rating
-      t.string :title
+      t.integer :user_id, :null => false
+      t.integer :rating, :null => false, :default => 0
+      t.string :title, :null => false
       t.string :slug
-      t.text :text
+      t.text :text, :null => false
 
-      t.integer :views_count
+      t.integer :views_count, :null => false, :default => 0
 
       t.timestamps
 
       ## Question
 
-      t.integer :answers_count
+      t.integer :answers_count, :null => false, :default => 0
 
       ## Answer
 
-      t.integer :question_id     
+      t.integer :question_id, :null => false, :default => 0     
 
     end
+
+    add_index(:posts, :user_id)
+    add_index(:posts, :slug)
   end
 
   def self.down

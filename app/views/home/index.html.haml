@@ -1,0 +1,6 @@
+
+#questions_list
+  = render :partial => "question", :collection => @questions
+
+%p
+  =link_to 'Задать вопрос', new_question_path

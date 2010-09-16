@@ -1,0 +1,21 @@
+.question_summary
+  .votes.counter
+    =question.rating
+  .status
+    .counter
+      =question.answers_count
+    %div
+      ответов
+  .views{:class => (question.views_count && question.views_count > 0) ? :answered : :unanswered}
+    .counter= question.views_count
+    просмотров   
+  .question_info
+    %h3= question.title
+    .tags
+      =render :partial => 'tag', :collection => question.tags 
+    .creation_info
+      %span.created_at= question.created_at
+      %a= question.user.name
+.clear
+
+
