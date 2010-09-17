@@ -5,7 +5,7 @@ class CreatePosts < ActiveRecord::Migration
 
       t.integer :user_id, :null => false
       t.integer :rating, :null => false, :default => 0
-      t.string :title, :null => false
+      t.string :title
       t.string :slug
       t.text :text, :null => false
 

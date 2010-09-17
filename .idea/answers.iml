@@ -33,6 +33,12 @@
     </requirement>
     <requirement>
       <requirement>
+        <dependency name="maruku" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source from="Gemfile" />
+    </requirement>
+    <requirement>
+      <requirement>
         <dependency name="nifty-generators" version="0" bound="GREATER_OR_EQUAL" git="false" />
       </requirement>
       <source from="Gemfile" />
@@ -80,6 +86,8 @@
     <orderEntry type="library" scope="PROVIDED" name="[gem] gilenson (v1.1.1, /usr/lib/ruby/gems/1.8/gems/gilenson-1.1.1)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] haml (v3.0.18, /usr/lib/ruby/gems/1.8/gems/haml-3.0.18)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] rutils (v1.1.1, /usr/lib/ruby/gems/1.8/gems/rutils-1.1.1)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] maruku (v0.6.0, /usr/lib/ruby/gems/1.8/gems/maruku-0.6.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] syntax (v1.0.0, /usr/lib/ruby/gems/1.8/gems/syntax-1.0.0)" level="application" />
   </component>
 </module>
 

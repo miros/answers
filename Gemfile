@@ -6,6 +6,7 @@ gem 'devise'
 gem 'flutie'
 gem 'nifty-generators'
 gem 'rutils'
+gem 'maruku'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

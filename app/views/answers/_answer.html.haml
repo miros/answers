@@ -1,0 +1,21 @@
+.answer
+  %table#post_table
+    %tr
+      %td.vote
+        .vote_up
+          %a
+            ^
+        .rating
+          =answer.rating
+        .vote_down
+          %a
+            V
+        .vote_accepted
+          %a
+            []
+      %td.post
+        = render_markdown answer.text
+        .creation_info
+          %div.created_at= time_ago @question.created_at
+          %a= @question.user.name
+        %div.clear

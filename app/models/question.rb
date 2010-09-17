@@ -11,6 +11,24 @@ class Question < Post
   validates :text, :presence => true
   validates :slug, :presence => true, :uniqueness => true
 
+  attr_protected :tags
+
+  attr_writer :tags_string
+
+  def tags_string
+    self.tags.map(&:name).join(', ')    
+  end
+
+  before_save :set_tags
+
+  private
+
+    def set_tags
+      tags = @tags_string.split(',').map {|tag_name| tag_name.mb_chars.downcase.strip }.delete_if(&:empty?).map {|tag_name| Tag.find_or_create_by_name(tag_name)}
+      self.tags.clear
+      self.tags = tags
+    end
+
 end
 
 

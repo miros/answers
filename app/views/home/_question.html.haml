@@ -1,5 +1,5 @@
 .question_summary
-  .votes.counter
+  .votes.rating
     =question.rating
   .status
     .counter
@@ -10,11 +10,11 @@
     .counter= question.views_count
     просмотров   
   .question_info
-    %h3= question.title
+    %h3= link_to question.title, question
     .tags
-      =render :partial => 'tag', :collection => question.tags 
+      =render question.tags 
     .creation_info
-      %span.created_at= question.created_at
+      %span.created_at= time_ago question.created_at
       %a= question.user.name
 .clear
 

@@ -23,7 +23,7 @@
     float: left;
 }
 
-.question_summary .votes {
+.question_summary .rating {
     background:none repeat scroll 0 0 #EEEEEE;
     float:left;
     height:38px;
@@ -96,6 +96,70 @@ a.post_tag {
     background:none repeat scroll 0 0 #9A4444;
     color:#FFFFFF;
 }
+
+#question_header {
+    border-bottom:1px solid #555555;
+}
+
+td.vote {
+  width: 50px;    
+}
+
+.vote_up {
+    margin-bottom: -20px;
+}
+
+.vote_up a {
+  font-size:350%;
+  text-decoration: none;
+}
+
+.vote_down a {
+  font-size:210%;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.vote_star {
+    margin-top: 20px;
+}
+
+.vote_star a {
+  font-size:300%;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#post_table {
+    width: 70%;
+}
+
+#post_table .rating {
+    text-align:center;
+    font-size: 210%;
+    width: 10px;
+}
+
+#post_table td {
+    vertical-align: top;
+}
+#post_table .creation_info {
+    background-color:#E0EAF1;
+    width: 200px;
+    height: 50px;
+    float: right;
+}
+
+.answer #post_table .creation_info {
+    background-color: #fff;
+}
+
+.answers .answers_header {
+    border-bottom:1px solid #666666;
+}
+
+
+
 
 
 

@@ -2,9 +2,10 @@ class Post < ActiveRecord::Base
 
   belongs_to :question
   belongs_to :user
-
+  has_many :comments
 
   validates :text, :presence => true
+  validates :user_id, :presence => true
 
 end
 

@@ -11,7 +11,6 @@ class Tag < ActiveRecord::Base
   
 end
 
-
 # == Schema Info
 #
 # Table name: tags

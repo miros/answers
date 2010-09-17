@@ -1,0 +1,40 @@
+#question_header
+  %h1
+    = @question.title
+%table#post_table
+  %tr
+    %td.vote
+      .vote_up
+        %a
+          ^
+      .rating
+        =@question.rating
+      .vote_down
+        %a
+          V
+      .vote_star
+        %a
+          *
+    %td.question
+      = render_markdown @question.text
+      .tags
+        = render @question.tags
+      .creation_info
+        %div.created_at= time_ago @question.created_at
+        %a= @question.user.name
+      = link_to 'Edit', edit_question_path(@question)
+      = link_to 'Back', questions_path
+      %div.clear
+
+%div.answers
+  %div.answers_header
+    %h1
+      #{@question.answers.count} Ответов
+  = render @question.answers
+
+%div
+  = form_for([@question, @question.answers.new]) do |f|
+    = f.label :text, 'Ответ'
+    = f.text_area :text
+    %br
+    = f.submit
