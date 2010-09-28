@@ -4,7 +4,7 @@ class Question < Post
 
   use_as_slug :title
 
-  has_many :answers
+  has_many :answers, :order => 'rating DESC'
   has_and_belongs_to_many :tags
 
   validates :title, :presence => true, :length => { :maximum => 200 }
