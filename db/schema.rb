@@ -10,13 +10,28 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100915115743) do
+ActiveRecord::Schema.define(:version => 20100928111917) do
+
+  create_table "comments", :force => true do |t|
+    t.integer  "post_id"
+    t.integer  "user_id"
+    t.text     "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "post_votes", :force => true do |t|
+    t.integer  "post_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "posts", :force => true do |t|
     t.string   "type"
     t.integer  "user_id",                      :null => false
     t.integer  "rating",        :default => 0, :null => false
-    t.string   "title",                        :null => false
+    t.string   "title"
     t.string   "slug"
     t.text     "text",                         :null => false
     t.integer  "views_count"

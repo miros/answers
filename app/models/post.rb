@@ -3,6 +3,7 @@ class Post < ActiveRecord::Base
   belongs_to :question
   belongs_to :user
   has_many :comments
+  has_many :post_votes
 
   validates :text, :presence => true
   validates :user_id, :presence => true

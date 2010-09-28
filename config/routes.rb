@@ -7,6 +7,7 @@ Answers::Application.routes.draw do
     resources :answers, :only => [:create]
   end
 
+  resources :post_votes, :only => [:create]
   resources :tags, :only => [:show]
 
   # The priority is based upon order of creation:

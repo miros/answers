@@ -5,8 +5,7 @@
   %tr
     %td.vote
       .vote_up
-        %a
-          ^
+        = link_to '^', post_votes_path(:post_id => @question.id), :remote => true, :method => :post
       .rating
         =@question.rating
       .vote_down
