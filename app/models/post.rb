@@ -8,6 +8,12 @@ class Post < ActiveRecord::Base
   validates :text, :presence => true
   validates :user_id, :presence => true
 
+
+  def update_rating
+    rating = self.post_votes.inject(0) {|rating, vote| rating + vote.rating}
+    self.update_attribute(:rating, rating)
+  end
+
 end
 
 

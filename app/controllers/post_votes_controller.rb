@@ -5,23 +5,32 @@ class PostVotesController < ApplicationController
   # POST /answers
   def create
 
-    post = Post.find(params[:post_id]) 
+    @post = Post.find(params[:post_id])
 
-    question = (post.respond_to?(:question)) ? post.question() : post
+    rating = case params[:rating]
+      when 'up'
+        1
+      when 'down'
+        -1
+    end
 
-    @post_vote = PostVote.new(:post => post, :user => current_user)
+    question = (@post.respond_to?(:question)) ? @post.question() : @post
+ 
+    @post_vote = PostVote.find_or_initialize_by_post_id_and_user_id(:post_id => @post.id, :user_id => current_user.id)
+    @post_vote.rating = rating
 
-      if @post_vote.save
-        respond_to do |format|
-          format.html { redirect_to(question, :notice => 'Post was rated successfully') }
-          format.js { render :created }
-        end
-      else
-        respond_to do |format|
-          format.html { redirect_to(question, :notice => 'Error rating post') }
-          format.js { render :error }
-        end
+    if @post_vote.save
+      respond_to do |format|
+        format.html { redirect_to(question, :notice => 'Post was rated successfully') }
+        format.js { render :created }
       end
+    else
+      respond_to do |format|
+        format.html { redirect_to(question, :notice => 'Error rating post') }
+        format.js { render :error }
+      end
+    end
+
   end
 
 

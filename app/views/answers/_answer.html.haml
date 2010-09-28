@@ -3,19 +3,17 @@
     %tr
       %td.vote
         .vote_up
-          %a
-            ^
-        .rating
+          = link_to '^', post_votes_path(:post_id => answer.id, :rating => 'up'), :remote => true, :method => :post
+        .rating{:id => dom_id(answer, :rating) }
           =answer.rating
         .vote_down
-          %a
-            V
+          = link_to 'V', post_votes_path(:post_id => answer.id, :rating => 'down'), :remote => true, :method => :post
         .vote_accepted
           %a
             []
       %td.post
         = render_markdown answer.text
         .creation_info
-          %div.created_at= time_ago @question.created_at
-          %a= @question.user.name
+          %div.created_at= time_ago answer.created_at
+          %a= answer.user.name
         %div.clear

@@ -5,12 +5,11 @@
   %tr
     %td.vote
       .vote_up
-        = link_to '^', post_votes_path(:post_id => @question.id), :remote => true, :method => :post
-      .rating
+        = link_to '^', post_votes_path(:post_id => @question.id, :rating => 'up'), :remote => true, :method => :post
+      .rating{:id => dom_id(@question, :rating) }
         =@question.rating
       .vote_down
-        %a
-          V
+        = link_to 'V', post_votes_path(:post_id => @question.id, :rating => 'down'), :remote => true, :method => :post
       .vote_star
         %a
           *

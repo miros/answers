@@ -1,1 +1,1 @@
-$("#container").append('<p>!!!</p>');
+$("#<%= dom_id(@post, :rating) %>").text('<%= @post.reload.rating %>');

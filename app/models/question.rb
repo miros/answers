@@ -24,6 +24,7 @@ class Question < Post
   private
 
     def set_tags
+      return unless @tags_string 
       tags = @tags_string.split(',').map {|tag_name| tag_name.mb_chars.downcase.strip }.delete_if(&:empty?).map {|tag_name| Tag.find_or_create_by_name(tag_name)}
       self.tags.clear
       self.tags = tags
