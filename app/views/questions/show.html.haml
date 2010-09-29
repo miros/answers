@@ -10,9 +10,8 @@
         =@question.rating
       .vote_down
         = link_to 'V', post_votes_path(:post_id => @question.id, :rating => 'down'), :remote => true, :method => :post
-      .vote_star
-        %a
-          *
+      #vote_star
+        = link_to (current_user && current_user.question_favourite?(@question)) ? '!*!' : '*', favourite_questions_path(:question_id => @question.id), :remote => true, :method => :post
     %td.question
       = render_markdown @question.text
       .tags

@@ -10,8 +10,10 @@
   </head>
   <body>
       <div id="userMenu">
+            [<%= link_to "Главная", root_path %>]
         <% if user_signed_in? %>
             [<%= link_to "Выйти", destroy_user_session_path %>]
+            [<%= link_to "Избранное", favourite_questions_path %>]
         <% else %>
             [<%= link_to "Войти", new_user_session_path %>]
           <% end %>

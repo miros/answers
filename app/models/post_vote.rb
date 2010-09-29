@@ -1,5 +1,7 @@
 class PostVote < ActiveRecord::Base
 
+  class AlreadyVotedError < Exception; end
+
   belongs_to :post
   belongs_to :user
 
@@ -7,6 +9,7 @@ class PostVote < ActiveRecord::Base
   validates :user_id, :presence => true
 
   after_save :update_post_rating
+
 
   private
 

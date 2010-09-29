@@ -6,6 +6,7 @@ class Question < Post
 
   has_many :answers, :order => 'rating DESC'
   has_and_belongs_to_many :tags
+  has_many :views, :class_name => "QuestionView"
 
   validates :title, :presence => true, :length => { :maximum => 200 }
   validates :text, :presence => true
@@ -17,6 +18,10 @@ class Question < Post
 
   def tags_string
     self.tags.map(&:name).join(', ')    
+  end
+
+  def mark_seen_by(user)
+    self.views.find_or_create_by_user_id(user.id)
   end
 
   before_save :set_tags

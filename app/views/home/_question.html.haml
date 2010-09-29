@@ -7,7 +7,7 @@
     %div
       ответов
   .views{:class => (question.views_count && question.views_count > 0) ? :answered : :unanswered}
-    .counter= question.views_count
+    .counter= question.question_views_count
     просмотров   
   .question_info
     %h3= link_to question.title, question

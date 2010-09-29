@@ -14,6 +14,20 @@ class Post < ActiveRecord::Base
     self.update_attribute(:rating, rating)
   end
 
+  def vote(user, rating)
+    post_vote = self.post_votes.where(:user_id => user.id).first
+
+    raise PostVote::AlreadyVotedError if post_vote && post_vote.rating == rating
+
+    unless post_vote
+      post_vote = self.post_votes.new(:user => user)
+    end
+
+    post_vote.rating = rating
+
+    post_vote.save!
+  end
+
 end
 
 

@@ -10,6 +10,12 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :questions
   has_many :answers
+  has_many :favourite_questions
+  has_many :favourites, :class_name => 'Question', :through => :favourite_questions
+
+  def question_favourite?(question)
+    return self.favourite_questions.where(:question_id => question).first
+  end
 
 end
 

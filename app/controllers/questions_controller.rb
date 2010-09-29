@@ -18,6 +18,8 @@ class QuestionsController < ApplicationController
   def show
     @question = Question.find(params[:id])
 
+    @question.mark_seen_by(current_user) if current_user
+
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @question }

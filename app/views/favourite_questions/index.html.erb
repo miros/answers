@@ -1,0 +1,15 @@
+<h1>Listing favourite_questions</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @favourite_questions.each do |favourite_question| %>
+  <tr>
+    <td><%= link_to favourite_question.question.title, favourite_question.question %></td>
+    <td><%= link_to 'Destroy', favourite_question, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>

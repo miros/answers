@@ -121,11 +121,11 @@ td.vote {
   font-weight: bold;
 }
 
-.vote_star {
+#vote_star {
     margin-top: 20px;
 }
 
-.vote_star a {
+#vote_star a {
   font-size:300%;
   text-decoration: none;
   font-weight: bold;
