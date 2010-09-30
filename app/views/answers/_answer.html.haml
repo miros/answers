@@ -8,9 +8,14 @@
           =answer.rating
         .vote_down
           = link_to 'V', post_votes_path(:post_id => answer.id, :rating => 'down'), :remote => true, :method => :post
-        .vote_accepted
-          %a
-            []
+        .vote_accepted{:id => dom_id(answer, :is_accepted)}
+          [
+          -if answer.question.accepted_answer
+            #{answer.accepted ? '*' : ''}
+          -elsif answer.question.user == current_user
+            =link_to 'accept', accept_question_answer_path(answer.question, answer), :remote => true, :method => :post
+          -else
+          ]
       %td.post
         = render_markdown answer.text
         .creation_info

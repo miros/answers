@@ -15,6 +15,29 @@ class AnswersController < ApplicationController
       end
   end
 
+  # POST /accept
+  def accept
+    @answer = Answer.find(params[:id])
+
+    unless @answer.user == current_user
+      render :status => :unauthorized
+      return
+    end
+
+    @answer.accepted = true
+
+    respond_to do |format|
+      unless @answer.save
+         msg = "You already marked one of answers as accepted"
+         format.html { redirect_to @answer.question, :notice => msg }
+         format.js { render :text => "alert('#{msg}')" }
+      else
+        format.html { redirect_to @answer.question, :notice => 'Answer marked as accepted' }
+        format.js
+      end
+    end
+
+  end
 
 
 end

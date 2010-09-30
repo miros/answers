@@ -4,9 +4,11 @@ class Question < Post
 
   use_as_slug :title
 
-  has_many :answers, :order => 'rating DESC'
+  has_many :answers, :order => 'accepted DESC, rating DESC'
   has_and_belongs_to_many :tags
   has_many :views, :class_name => "QuestionView"
+  has_many :favourite_questions
+  has_one :accepted_answer, :class_name => "Answer", :conditions => "accepted = '1'" 
 
   validates :title, :presence => true, :length => { :maximum => 200 }
   validates :text, :presence => true
@@ -24,6 +26,10 @@ class Question < Post
     self.views.find_or_create_by_user_id(user.id)
   end
 
+  def favourites_count
+    self.favourite_questions.count
+  end
+
   before_save :set_tags
 
   private
@@ -37,20 +43,19 @@ class Question < Post
 
 end
 
-
 # == Schema Info
 #
 # Table name: posts
 #
-#  id            :integer         not null, primary key
-#  type          :string(255)
-#  user_id       :integer         not null
-#  rating        :integer         not null, default(0)
-#  title         :string(255)     not null
-#  slug          :string(255)
-#  text          :text            not null
-#  views_count   :integer
-#  created_at    :datetime
-#  updated_at    :datetime
-#  answers_count :integer         not null, default(0)
-#  question_id   :integer         not null, default(0)
+#  id                   :integer         not null, primary key
+#  type                 :string(255)
+#  user_id              :integer         not null
+#  rating               :integer         not null, default(0)
+#  title                :string(255)
+#  slug                 :string(255)
+#  text                 :text            not null
+#  created_at           :datetime
+#  updated_at           :datetime
+#  answers_count        :integer         not null, default(0)
+#  question_id          :integer         not null, default(0)
+#  question_views_count :integer         not null, default(0)

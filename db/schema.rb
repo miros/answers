@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100929102047) do
+ActiveRecord::Schema.define(:version => 20100930095854) do
 
   create_table "comments", :force => true do |t|
     t.integer  "post_id"
@@ -37,17 +37,17 @@ ActiveRecord::Schema.define(:version => 20100929102047) do
 
   create_table "posts", :force => true do |t|
     t.string   "type"
-    t.integer  "user_id",                             :null => false
-    t.integer  "rating",               :default => 0, :null => false
+    t.integer  "user_id",                                 :null => false
+    t.integer  "rating",               :default => 0,     :null => false
     t.string   "title"
     t.string   "slug"
-    t.text     "text",                                :null => false
-    t.integer  "views_count"
+    t.text     "text",                                    :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "answers_count",        :default => 0, :null => false
-    t.integer  "question_id",          :default => 0, :null => false
-    t.integer  "question_views_count", :default => 0, :null => false
+    t.integer  "answers_count",        :default => 0,     :null => false
+    t.integer  "question_id",          :default => 0,     :null => false
+    t.integer  "question_views_count", :default => 0,     :null => false
+    t.boolean  "accepted",             :default => false, :null => false
   end
 
   add_index "posts", ["slug"], :name => "index_posts_on_slug"

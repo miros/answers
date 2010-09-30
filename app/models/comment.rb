@@ -7,3 +7,14 @@ class Comment < ActiveRecord::Base
   validates :post_id, :presence => true
 
 end
+
+# == Schema Info
+#
+# Table name: comments
+#
+#  id         :integer         not null, primary key
+#  post_id    :integer
+#  user_id    :integer
+#  text       :text
+#  created_at :datetime
+#  updated_at :datetime

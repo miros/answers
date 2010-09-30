@@ -1,12 +1,12 @@
 .question_summary
   .votes.rating
     =question.rating
-  .status
+  .status{:class => (question.answers_count && question.answers_count > 0) ? :answered : :unanswered}
     .counter
       =question.answers_count
     %div
       ответов
-  .views{:class => (question.views_count && question.views_count > 0) ? :answered : :unanswered}
+  .views
     .counter= question.question_views_count
     просмотров   
   .question_info

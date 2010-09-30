@@ -1,1 +1,2 @@
-$('#vote_star a').html('<%= current_user.question_favourite?(@question) ? '!*!' : '*' %>');
+$('#vote_star a').html('<%= star_text %>');
+$('#vote_star .favourites_count').html('<%= @question.favourites_count %>');

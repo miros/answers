@@ -19,7 +19,6 @@ class User < ActiveRecord::Base
 
 end
 
-
 # == Schema Info
 #
 # Table name: users

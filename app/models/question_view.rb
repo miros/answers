@@ -7,3 +7,13 @@ class QuestionView < ActiveRecord::Base
   validates :question_id, :presence => true
 
 end
+
+# == Schema Info
+#
+# Table name: question_views
+#
+#  id          :integer         not null, primary key
+#  question_id :integer
+#  user_id     :integer
+#  created_at  :datetime
+#  updated_at  :datetime

@@ -4,7 +4,9 @@ Answers::Application.routes.draw do
   get "home/index"
 
   resources :questions do
-    resources :answers, :only => [:create]
+    resources :answers, :only => [:create] do
+      post 'accept', :on => :member
+    end
   end
 
   resources :post_votes, :only => [:create]

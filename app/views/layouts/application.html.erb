@@ -16,7 +16,7 @@
             [<%= link_to "Избранное", favourite_questions_path %>]
         <% else %>
             [<%= link_to "Войти", new_user_session_path %>]
-          <% end %>
+        <% end %>
     </div>
     <div id="container">
       <% flash.each do |name, msg| %>
