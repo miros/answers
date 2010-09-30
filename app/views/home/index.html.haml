@@ -2,5 +2,12 @@
 #questions_list
   = render :partial => "question", :collection => @questions
 
+%pages
+  = will_paginate @questions 
+
+%br
+%br
+
 %p
   =link_to 'Задать вопрос', new_question_path
+

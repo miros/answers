@@ -1,0 +1,5 @@
+#questions_list
+  = render :partial => "/home/question", :collection => @questions
+
+%pages
+  = will_paginate @questions 

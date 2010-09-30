@@ -1,5 +1,10 @@
 class Question < Post
 
+  cattr_reader :per_page
+  @@per_page = 3
+
+  default_scope order('created_at DESC')
+
   include Sluggable
 
   use_as_slug :title
