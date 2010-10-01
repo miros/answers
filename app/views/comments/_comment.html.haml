@@ -1,0 +1,6 @@
+.comment{:id => dom_id(comment)}
+  = comment.text
+  =  comment.user.name
+  = time_ago comment.created_at
+  -if current_user && current_user == comment.user
+    = link_to 'Delete', comment, :remote => true, :method => :delete, :confirm => 'Delete?'

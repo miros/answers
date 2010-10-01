@@ -21,4 +21,7 @@
         .creation_info
           %div.created_at= time_ago answer.created_at
           %a= answer.user.name
-        %div.clear
+          %div.clear
+  .comments{:id => "post_#{answer.id}"}
+    = render answer.comments
+  = render 'comments/form', :comment => Comment.new(:post => answer)

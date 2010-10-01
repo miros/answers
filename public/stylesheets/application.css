@@ -159,6 +159,10 @@ td.vote {
     border-bottom:1px solid #666666;
 }
 
+textarea.small {
+    width: 600px;
+    height: 30px;
+}
 
 
 
